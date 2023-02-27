@@ -8,7 +8,7 @@
             <div class="links">
             
                 <a class="<?php if($uri == /) { echo active; } else { echo none; } ?>" href="../store.php">Shop</a>
-                <a href="../about">About</a>
+                <a href="../about.php">About</a>
                 <a href="/">Home</a>
             </div>
             <div class="user">
