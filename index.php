@@ -16,20 +16,35 @@
 </header>
 <body>
 
-<a class="btn success" href="forms/create.php">Добавить товар</a>
 
+<section>
+    <div class="content">
+        <div class="actions">
+            <input id="search" type="text" name="search" placeholder="Поиск..." >
+            <a class="btn success" href="forms/create.php">Добавить товар</a>
+        </div>
 
-<?php
-//    require_once 'db/connection.php';
-//
-//    $sql = "SELECT * FROM images";
-//    $result = mysqli_query($connect, $sql);
-//
-//    while ($row = mysqli_fetch_array($result)) {
-//        echo '<img src="data:image/jpeg;base64,'.base64_encode($row['data']).'"/>';
-//    }
-//
-//?>
+        <?php
+            require_once 'db/connection.php';
+
+            $sql = "SELECT * FROM items";
+            $result = mysqli_query($connect, $sql);
+        ?>
+        <div class="grid-wrapper">
+            <?php
+                while ($row = mysqli_fetch_array($result)) {
+                    echo '
+                        <a class="item-card">
+                            <img class="item-img" src="data:image/jpeg;base64,'.base64_encode($row['image']).'"/>
+                            <h3 class="coffee-title">' . $row['title'] . '</h3>
+                            <p>' . $row['price'] . '$</p>
+                        </a>
+                    ';
+                }
+            ?>
+        </div>
+    </div>
+</section>
 
 <script src="static/js/imagePreview.js"></script>
 <script src="static/js/formAddingStorage.js"></script>
