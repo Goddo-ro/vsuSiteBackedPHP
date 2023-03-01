@@ -21,7 +21,7 @@
     <div class="content">
         <div class="actions">
             <input id="search" type="text" name="search" placeholder="Поиск..." >
-            <a class="btn success" href="forms/create.php">Добавить товар</a>
+            <?php if ($_SESSION['user']['role'] === "ADMIN") echo '<a class="btn success" href="forms/create.php">Добавить товар</a>' ?>
         </div>
 
         <?php
