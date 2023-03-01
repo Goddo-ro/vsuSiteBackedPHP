@@ -7,20 +7,25 @@ if (!empty($connect)) {
     $username = $_POST['username'];
     $password = md5($_POST['password']);
 
-    $check_user = mysqli_query($connect, "SELECT * FROM `users` WHERE `username` = '$username' AND `password` = '$password'");
+    $check_user = mysqli_query($connect, "SELECT * FROM `users` WHERE `username` = '$username'");
 
     if (mysqli_num_rows($check_user) > 0) {
         $user = mysqli_fetch_assoc($check_user);
 
-        $_SESSION['user'] = [
-            "id" => $user['id'],
-            "username" => $user['username'],
-            "role" => $user['role']
-        ];
+        if ($user['password'] != $password) {
+            $_SESSION['message'] = "Error: Неверный пароль";
+            header("Location: ../login.php");
+        } else {
+            $_SESSION['user'] = [
+                "id" => $user['id'],
+                "username" => $user['username'],
+                "role" => $user['role']
+            ];
 
-        header("Location: ../index.php");
+            header("Location: ../index.php");
+        }
     } else {
-        $_SESSION['message'] = "Incorrect username or password";
+        $_SESSION['message'] = "Error: Имя пользователя не найдено";
         header("Location: ../login.php");
     }
 }

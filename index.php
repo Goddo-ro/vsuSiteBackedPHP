@@ -11,17 +11,17 @@
     <title>Coffee Store</title>
     <link rel="icon" href="static/images/coffee.png">
 </head>
+<body>
+
 <header>
     <?php include 'blocks/header.php' ?>
 </header>
-<body>
-
 
 <section class="store">
     <div class="content">
         <div class="actions">
             <input id="search" type="text" name="search" placeholder="Поиск..." >
-            <a class="btn success" href="forms/create.php">Добавить товар</a>
+            <?php if ($_SESSION['user']['role'] === "ADMIN") echo '<a class="btn success" href="forms/create.php">Добавить товар</a>' ?>
         </div>
 
         <?php
@@ -35,8 +35,10 @@
         <div class="grid-wrapper">
             <?php
                 while ($row = mysqli_fetch_array($result)) {
+            ?>
+                    <a href="item.php?id=<?= $row['id'] ?>" class="item-card">
+            <?php
                     echo '
-                        <a class="item-card">
                             <img class="item-img" src="data:image/jpeg;base64,'.base64_encode($row['image']).'"/>
                             <h3 class="coffee-title">' . $row['title'] . '</h3>
                             <p>' . $row['price'] . '$</p>
@@ -48,6 +50,7 @@
     </div>
 </section>
 
+<script src="static/js/searchBar.js"></script>
 <script src="static/js/imagePreview.js"></script>
 <script src="static/js/formAddingStorage.js"></script>
 </body>

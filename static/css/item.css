@@ -82,3 +82,11 @@ textarea {
     display: inline;
     color: #0d8fb7;
 }
+
+.success-message {
+    color: #4fad5a;
+}
+
+.message {
+    color: #ff6c6c;
+}

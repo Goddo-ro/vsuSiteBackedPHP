@@ -31,7 +31,13 @@
             <input name="password" type="password" placeholder="Password...">
             <button type="submit">Login</button>
             <p>
-                Do not have an account? <a href="register.php">Registration</a>
+                Нет аккаунта? <a href="register.php">Зарегистрироваться</a>
+            </p>
+            <p class="success-message">
+                <?php
+                echo $_SESSION['success_message'];
+                unset($_SESSION['success_message']);
+                ?>
             </p>
             <p class="message">
                 <?php

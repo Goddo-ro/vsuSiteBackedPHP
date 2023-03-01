@@ -10,7 +10,6 @@ if (!$info) {
     die("File is not an image");
 }
 $name = $image["name"];
-$type = $image["type"];
 $blob = addslashes(file_get_contents($image["tmp_name"]));
 
 $sql = "INSERT INTO `items` (`title`, `price`, `description`, `image`) VALUE ('" . $title . "', '" . $price . "', '" . $description . "', '" . $blob . "')";
