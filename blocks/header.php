@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     echo '
         <div class="content header-content">
             <a href="../store.php" class="left">
@@ -23,7 +25,7 @@
                         <a href="/cart"><img class="cart" src="../static/images/empty_cart.png" alt="cart"></a>
                         <p>
                     ';
-                    echo $_SESSION['username'];
+                    echo $_SESSION['user']['username'];
                     echo '
                         </p>
                         <a class="exit" href="../vendor/exit.php">Exit</a>

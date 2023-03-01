@@ -5,17 +5,22 @@ require_once "../db/connection.php";
 
 if (!empty($connect)) {
     $username = $_POST['username'];
-    $password = $_POST['password'];
-    $repeat_password = $_POST['repeat_password'];
+    $password = md5($_POST['password']);
 
-    if ($password === $repeat_password) {
-        $password = md5($password);
+    $check_user = mysqli_query($connect, "SELECT * FROM `users` WHERE `username` = '$username' AND `password` = '$password'");
 
-        mysqli_query($connect, "INSERT INTO `users` (`id`, `username`, `password`) VALUES (NULL, '$username', '$password')");
-        $_SESSION['message'] = 'Registration completed successfully.';
+    if (mysqli_num_rows($check_user) > 0) {
+        $user = mysqli_fetch_assoc($check_user);
+
+        $_SESSION['user'] = [
+            "id" => $user['id'],
+            "username" => $user['username'],
+            "role" => $user['role']
+        ];
+
         header("Location: ../index.php");
     } else {
-        $_SESSION['message'] = 'Password mismatch';
-        header("Location: ../register.php");
+        $_SESSION['message'] = "Incorrect username or password";
+        header("Location: ../login.php");
     }
 }
