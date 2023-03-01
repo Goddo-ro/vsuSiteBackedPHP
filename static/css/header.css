@@ -1,0 +1,41 @@
+.user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+}
+
+.login-link:hover,
+.login-link:focus {
+    color: #bfccff;
+}
+
+.reg-link {
+    border-left: 1px solid #DCD7C9;
+    padding-left: 8px;
+}
+
+.reg-link:hover,
+.reg-link:focus {
+    color: #FFB345;
+}
+
+/* Login user */
+
+.username {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0 0 0 16px;
+}
+
+.exit {
+    color: #ff6c6c;
+    border-left: 1px solid #ff6c6c;
+    padding: 4px 8px 2px;
+}
+
+.exit:hover,
+.exit:focus {
+    background: #ff6c6c;
+    color: #562B1A;
+}

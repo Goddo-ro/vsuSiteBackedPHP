@@ -17,7 +17,7 @@
 <body>
 
 
-<section>
+<section class="store">
     <div class="content">
         <div class="actions">
             <input id="search" type="text" name="search" placeholder="Поиск..." >
