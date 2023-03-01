@@ -42,7 +42,7 @@
                 if ($_SESSION['user']['role'] === "ADMIN") {
                     echo '
                         <div class="content-footer">
-                            <a class="btn warning" href="vendor/update.php?id=' . $item['id'] . '">Редактировать</a>
+                            <a class="btn warning" href="forms/update.php?id=' . $item['id'] . '">Редактировать</a>
                             <a class="btn danger" href="vendor/delete.php?id=' . $item['id'] . '">Удалить</a>
                         </div>
                     ';
