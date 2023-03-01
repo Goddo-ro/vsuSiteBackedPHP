@@ -46,6 +46,12 @@
                             <a class="btn danger" href="vendor/delete.php?id=' . $item['id'] . '">Удалить</a>
                         </div>
                     ';
+                } else {
+                    echo '
+                        <div class="content-footer one">
+                            <a class="btn" href="vendor/cart_add.php?id=' . $item['id'] . '">В корзину</a>
+                        </div>
+                    ';
                 }
             }
         ?>

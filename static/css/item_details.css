@@ -55,3 +55,12 @@
     border-bottom-left-radius: 4px;
     gap: 12px;
 }
+
+.content-footer.one {
+    justify-content: flex-end;
+}
+
+.one a:hover,
+.one a:focus {
+    color: #bfccff;
+}
