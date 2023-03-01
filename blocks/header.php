@@ -26,7 +26,7 @@
                     ';
                 } else {
                     echo '
-                        <a href="/cart"><img class="cart" src="../static/images/empty_cart.png" alt="cart"></a>
+                        <a href="../cart.php"><img class="cart" src="../static/images/empty_cart.png" alt="cart"></a>
                         <p class="username">
                     ';
                     echo $_SESSION['user']['username'];
