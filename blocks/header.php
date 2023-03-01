@@ -1,6 +1,8 @@
 <?php
     session_start();
 
+    require_once __DIR__ . '/../db/connection.php';
+
     echo '
             <link href="../static/css/header.css" rel="stylesheet">
         <div class="content header-content">
@@ -25,8 +27,28 @@
                         <a class="reg-link" href="../register.php">Зарегистрироваться</a>
                     ';
                 } else {
+                    $user_id = $_SESSION['user']['id'];
+                    $cart = mysqli_query($connect, "SELECT * FROM `carts` WHERE `user_id` = '$user_id'");
+                    $cart = mysqli_fetch_assoc($cart);
+                    $cart_id = $cart['id'];
+                    $items = mysqli_query($connect, "SELECT * FROM `cart_items` WHERE `cart_id` = '$cart_id'");
+
+                    if (mysqli_num_rows($items) > 0) {
+                        echo '
+                            <div>
+                                <a href="../cart.php"><img class="cart" src="../static/images/full_cart.png" alt="cart"></a>
+                                <span>
+                        ';
+                        echo mysqli_num_rows($items);
+                        echo '
+                                </span>
+                            </div>
+                        ';
+                    } else {
+                        echo '<a href="../cart.php"><img class="cart" src="../static/images/empty_cart.png" alt="cart"></a>';
+                    }
+
                     echo '
-                        <a href="../cart.php"><img class="cart" src="../static/images/empty_cart.png" alt="cart"></a>
                         <p class="username">
                     ';
                     echo $_SESSION['user']['username'];
