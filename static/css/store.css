@@ -69,6 +69,17 @@
     color: var(--gray-color);
 }
 
+.item-card div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price {
+    font-size: 1.25rem;
+    font-family: 'Merienda', cursive;
+}
+
 .item-card:hover,
 .item-card:focus {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

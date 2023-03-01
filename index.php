@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="static/css/index.css" rel="stylesheet">
     <link href="static/css/store.css" rel="stylesheet">
-    <link href="static/css/item.css" rel="stylesheet">
     <title>Coffee Store</title>
     <link rel="icon" href="static/images/coffee.png">
 </head>
@@ -40,8 +39,10 @@
             <?php
                     echo '
                             <img class="item-img" src="data:image/jpeg;base64,'.base64_encode($row['image']).'"/>
-                            <h3 class="coffee-title">' . $row['title'] . '</h3>
-                            <p>' . $row['price'] . '$</p>
+                            <div>
+                                <h3 class="coffee-title">' . $row['title'] . '</h3>
+                                <p class="price">' . $row['price'] . '$</p>
+                            </div>
                         </a>
                     ';
                 }
