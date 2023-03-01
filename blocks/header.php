@@ -12,8 +12,25 @@
                 <a href="/">Home</a>
             </div>
             <div class="user">
-                <a href="/cart"><img class="cart" src="../static/images/empty_cart.png" alt="cart"></a>
-            </div>
+    ';
+                if (!$_SESSION['user']) {
+                    echo '
+                        <a class="login-link" href="../login.php">Sign In</a>
+                        <a class="reg-link" href="../register.php">Sign Up</a>
+                    ';
+                } else {
+                    echo '
+                        <a href="/cart"><img class="cart" src="../static/images/empty_cart.png" alt="cart"></a>
+                        <p>
+                    ';
+                    echo $_SESSION['username'];
+                    echo '
+                        </p>
+                        <a class="exit" href="../vendor/exit.php">Exit</a>
+                    ';
+                }
+
+    echo '</div>
         </div>
         <script src="../static/js/currentLink.js"></script>
     ';
