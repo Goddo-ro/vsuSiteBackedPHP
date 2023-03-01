@@ -17,7 +17,7 @@
 <body>
 
 
-<section>
+<section class="store">
     <div class="content">
         <div class="actions">
             <input id="search" type="text" name="search" placeholder="Поиск..." >
@@ -28,7 +28,9 @@
             require_once 'db/connection.php';
 
             $sql = "SELECT * FROM items";
-            $result = mysqli_query($connect, $sql);
+            if (!empty($connect)) {
+                $result = mysqli_query($connect, $sql);
+            }
         ?>
         <div class="grid-wrapper">
             <?php
