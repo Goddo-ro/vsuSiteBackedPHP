@@ -41,9 +41,9 @@
     <?php include 'blocks/header.php' ?>
 </header>
 
-<section class="cart-section">
+<section class="table-section">
     <div class="content">
-        <div class="cart-items scroller">
+        <div class="table-items scroller">
             <?php
                 if (!mysqli_num_rows($items)) {
                     echo '<h3>Корзина пуста</h3>';
@@ -53,7 +53,7 @@
                     $fetched_item = mysqli_fetch_assoc(mysqli_query($connect, "SELECT * FROM `items` WHERE `id` = '$item_id'"));
                     $total += $fetched_item['price'];
             ?>
-                    <div class="cart-item">
+                    <div class="table-item">
                         <?php echo '<img class="cart-img" src="data:image/jpeg;base64,'.base64_encode($fetched_item['image']).'"/>'; ?>
 
                         <div>
