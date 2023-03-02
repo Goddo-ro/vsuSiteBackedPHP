@@ -17,7 +17,7 @@
             <img class="me" src="static/images/me.png">
             <div class="right">
                 <div>
-                    <h1>Кирилл Романюк <span class="small-text">Frontend developer</span></h1>
+                    <h1>Кирилл Романюк <span class="small-text" id="typing"></span></h1>
                 </div>
                 <div class="center-align">
                     <p>Студент 1 курса ВГУ ФКН ИСИТ, 18 лет</p>
@@ -82,17 +82,20 @@
                     </h4>
                     <ul>
                         <li>Логин и регистрация пользователя.</li>
-                        <li>Работа с товаром со стороны админа:
+                        <li>Функционал со стороны админа:
                             <ol>
                                 <li>Добавление товара</li>
                                 <li>Редактирование товара</li>
                                 <li>Удаление товара</li>
+                                <li>Просмотр всех пользователей</li>
+                                <li>Удаление пользователя</li>
                             </ol>
                         </li>
                         <li>Работа с товаром со стороны пользователя:
                             <ol>
-                                <li>Добавление товара в корзину</li>
-                                <li>Удаление товара из корзины</li>
+                                <li>Просмотр товаров</li>
+                                <li>Добавление товаров в корзину</li>
+                                <li>"Покупка" товаров</li>
                             </ol>
                         </li>
                     </ul>
@@ -103,16 +106,18 @@
                         <li>HTML & CSS</li>
                         <li>Javascript:
                             <ol>
+                                <li>Работа с cookie</li>
                                 <li>Работа с localstorage</li>
-                                <li>Смена иконки корзины</li>
+                                <li>Взаимодействие с элементами DOM дерева</li>
                             </ol>
                         </li>
-                        <li>Python (пока не точно)
+                        <li>PHP
                         </li>
                         <li>MySQL:
                             <ol>
-                                <li>Работа с данными пользователя</li>
+                                <li>Работа с данными пользователей</li>
                                 <li>Работа с данными товаров</li>
+                                <li>Работа с данными корзин</li>
                             </ol>
                         </li>
                     </ul>
@@ -120,15 +125,24 @@
             </div>
         </div>
     </section>
-    <div class="footer">
+    <footer>
         <div class="content">
             <div class="social">
                 <a href="https://t.me/goddo_ra"><img src="static/images/telegram.png" alt="telegram"></a>
                 <a href="https://vk.com/id325432771"><img src="static/images/vk.png" alt="vk"></a>
                 <a href="https://github.com/Goddo-ro"><img src="static/images/github.png" alt="github"></a>
             </div>
+            <div class="remove-container">
+                <img class="remove-image" src="static/images/remove.png" />
+                <span class="remove-text">Удалить cookie</span>
+            </div>
         </div>
-    </div>
+    </footer>
+
+    <script src="static/js/scroll_cookie.js" type="module"></script>
+    <script src="static/js/cookie.js" type="module"></script>
+    <script src="static/js/typing.js"></script>
+    <script src="static/js/remove_text_animation.js" type="module"></script>
 </div>
 </body>
 </html>
