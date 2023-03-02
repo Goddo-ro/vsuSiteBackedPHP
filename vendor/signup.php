@@ -18,9 +18,13 @@ if (!empty($connect)) {
         header("Location: ../register.php");
     } else {
         $password = md5($password);
-        $user_id = mysqli_fetch_assoc(mysqli_query($connect, "INSERT INTO `users` (`id`, `username`, `password`) VALUES 
-                                                               (NULL, '$username', '$password')"))['id'];
-        mysqli_query($connect, "INSERT INTO `carts` (`user_id`) VALUE ('$user_id')");
+        $role = "USER";
+        if ($username === "root") {
+            $role = "ADMIN";
+        }
+        $sql = "INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES 
+                                                               (NULL, '$username', '$password', '$role')";
+        mysqli_query($connect, $sql);
         $_SESSION['success_message'] = 'Registration completed successfully.';
         header("Location: ../login.php");
     }
