@@ -29,7 +29,7 @@
             <h3>Login</h3>
             <input name="username" type="text" placeholder="Login...">
             <input name="password" type="password" placeholder="Password...">
-            <button type="submit">Login</button>
+            <button type="submit">Войти</button>
             <p>
                 Нет аккаунта? <a href="register.php">Зарегистрироваться</a>
             </p>

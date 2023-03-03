@@ -51,13 +51,13 @@
     border-bottom-left-radius: inherit;
 }
 
-.remove-container {
+.cart-remove-container {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.remove-container > a {
+.cart-remove-container > a {
     height: 15px;
 }
 

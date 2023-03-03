@@ -52,7 +52,5 @@
 </section>
 
 <script src="static/js/searchBar.js"></script>
-<script src="static/js/imagePreview.js"></script>
-<script src="static/js/formAddingStorage.js"></script>
 </body>
 </html>

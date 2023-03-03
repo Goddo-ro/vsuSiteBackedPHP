@@ -6,7 +6,7 @@
     echo '
             <link href="../static/css/header.css" rel="stylesheet">
         <div class="content header-content">
-            <a href="../store.php" class="left">
+            <a href="../index.php" class="left">
                 <img class="logo" src="../static/images/coffee.png">
                 <h1>Coffee Shop</h1>
             </a>

@@ -30,7 +30,7 @@
             <input name="username" type="text" placeholder="Login...">
             <input name="password" type="password" placeholder="Password...">
             <input name="repeat_password" type="password" placeholder="Repeat password...">
-            <button type="submit">Login</button>
+            <button type="submit">Зарегистрироваться</button>
             <p>
                 Уже есть аккаунт? <a href="/login.php">Войти</a>
             </p>

@@ -30,7 +30,6 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="static/css/index.css" rel="stylesheet">
-    <link href="static/css/store.css" rel="stylesheet">
     <link href="static/css/cart.css" rel="stylesheet">
     <title>Coffee Store</title>
     <link rel="icon" href="static/images/coffee.png">
@@ -58,7 +57,7 @@
 
                         <div>
                             <h3><?= $fetched_item['title'] ?></h3>
-                            <div class="remove-container">
+                            <div class="cart-remove-container">
                                 <p class="price"><?= $fetched_item['price'] ?>$</p>
                                 <a href="vendor/cart_delete.php?id=<?= $item['id'] ?>"><img class="remove-icon" src="static/images/remove.png"></a>
                             </div>

@@ -58,7 +58,5 @@
 
     </div>
 </section>
-
-<script src="static/js/imagePreview.js"></script>
 </body>
 </html>
